@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robson Maciel - Limpeza e Tratamento Profissional de Piscinas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#00B4DB',
+                            blue: '#0083B0',
+                            navy: '#0F172A',
+                            accent: '#10B981',
+                            whatsapp: '#25D366'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Range slider styling */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 22px;
+            width: 22px;
+            border-radius: 50%;
+            background: #00B4DB;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 180, 219, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-cyan selection:text-white">
+
+    <!-- 1. HEADER FIXO -->
+    <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xl shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid font-bold fa-water"></i>
+                </div>
+                <div>
+                    <span class="block text-xl font-extrabold tracking-tight text-slate-900 leading-none">ROBSON MACIEL</span>
+                    <span class="text-xs font-semibold text-brand-cyan tracking-wider uppercase">Tratamento de Piscinas</span>
+                </div>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                <a href="#inicio" class="hover:text-brand-blue transition-colors">Início</a>
+                <a href="#servicos" class="hover:text-brand-blue transition-colors">Serviços</a>
+                <a href="#antes-depois" class="hover:text-brand-blue transition-colors">Antes & Depois</a>
+                <a href="#diferenciais" class="hover:text-brand-blue transition-colors">Por Que Nós?</a>
+                <a href="#orcamento" class="hover:text-brand-blue transition-colors">Calculadora</a>
+            </nav>
+
+            <!-- Botão WhatsApp Desktop -->
+            <div class="hidden md:block">
+                <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Robson!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20minha%20piscina." 
+                   target="_blank"
+                   class="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Chamar no WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Botão Menu Mobile (Hambúrguer) -->
+            <button id="mobile-menu-btn" aria-label="Abrir Menu" class="md:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none">
+                <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Dropdown Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-3 pb-6 space-y-3 shadow-xl">
+            <a href="#inicio" class="mobile-link block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-cyan-50 font-medium">Início</a>
+            <a href="#servicos" class="mobile-link block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-cyan-50 font-medium">Serviços</a>
+            <a href="#antes-depois" class="mobile-link block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-cyan-50 font-medium">Antes & Depois</a>
+            <a href="#diferenciais" class="mobile-link block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-cyan-50 font-medium">Por Que Nós?</a>
+            <a href="#orcamento" class="mobile-link block px-4 py-2.5 rounded-lg text-slate-700 hover:bg-cyan-50 font-medium">Calculadora de Orçamento</a>
+            <div class="pt-2">
+                <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Robson!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20minha%20piscina." 
+                   target="_blank"
+                   class="w-full inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-xl font-bold shadow-md shadow-emerald-500/20">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Falar no WhatsApp Agora</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="inicio" class="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-cyan-50/60 via-sky-50/30 to-slate-50 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Coluna de Texto Hero -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-cyan-100/80 text-cyan-800 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full border border-cyan-200">
+                        <i class="fa-solid fa-sparkles text-cyan-600"></i> Atendimento Especializado & Agilidade
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight sm:leading-none">
+                        Piscina <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">Cristalina e Saudável</span> sem Você Ter Trabalho.
+                    </h1>
+                    
+                    <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Esqueça a preocupação com água turva ou verde. Oferecemos limpeza profunda, controle químico rigoroso e manutenção preventiva para você e sua família só aproveitarem.
+                    </p>
+
+                    <!-- CTA Hero -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#orcamento" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all hover:-translate-y-0.5">
+                            <i class="fa-solid fa-calculator"></i>
+                            <span>Simular Orçamento</span>
+                        </a>
+                        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Robson!%20Quero%20um%20or%C3%A7amento%20sem%20compromisso!" target="_blank" class="inline-flex items-center justify-center gap-3 bg-white border border-slate-200 hover:border-emerald-500 text-slate-700 hover:text-emerald-600 font-bold text-lg px-8 py-4 rounded-xl shadow-sm hover:shadow-md transition-all">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 text-xl"></i>
+                            <span>Contato Direto</span>
+                        </a>
+                    </div>
+
+                    <!-- Selos de Qualidade -->
+                    <div class="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                        <div class="text-center lg:text-left">
+                            <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">100%</p>
+                            <p class="text-xs text-slate-500 font-medium">Água Clara & Segura</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">5+ Anos</p>
+                            <p class="text-xs text-slate-500 font-medium">De Experiência</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">300+</p>
+                            <p class="text-xs text-slate-500 font-medium">Piscinas Tratadas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna de Imagem / Card Hero -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Imagem Principal da Hero -->
+                        <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] sm:aspect-[1/1] relative">
+                            <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Piscina cristalina tratada por Robson Maciel" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.src='https://placehold.co/800x800/0083B0/FFFFFF?text=Piscina+Cristalina'">
+                        </div>
+
+                        <!-- Card Flutuante de Avaliação -->
+                        <div class="absolute -bottom-6 -left-4 sm:-left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 max-w-xs">
+                            <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-circle-check text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="flex text-amber-400 text-xs mb-1">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-xs font-bold text-slate-800">Satisfação Garantida</p>
+                                <p class="text-[11px] text-slate-500">Água tratada com equilíbrio químico perfeito.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SEÇÃO DE SERVIÇOS -->
+    <section id="servicos" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest">Nossos Serviços</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Soluções Completas Para Sua Piscina</p>
+                <p class="text-slate-600 text-base sm:text-lg">Do cuidado preventivo quinzenal à recuperação emergencial de água verde. Cuidamos de tudo para você.</p>
+            </div>
+
+            <!-- Grid de Cards de Serviços -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-cyan-300 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-flask-vial"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Tratamento Químico</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Correção do pH, alcalinidade e cloração ideal. Proteção total contra bactérias, fungos e algas.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Tratamento%20Qu%C3%ADmico." target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-cyan-600 group-hover:text-cyan-700 pt-4 border-t border-slate-200">
+                        <span>Consultar Valor</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-cyan-300 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-blue-500/10 text-blue-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-broom"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Limpeza Física</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Aspiração do fundo, peneiração de sujeiras superficiais, escovação de paredes e limpeza da borda.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Limpeza%20F%C3%ADsica." target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 group-hover:text-blue-700 pt-4 border-t border-slate-200">
+                        <span>Consultar Valor</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-3 right-3 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">
+                        Urgente
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-droplet-slash"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Recuperação de Água Verde</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Tratamento de choque rápido. Deixamos sua piscina verde cristalina novamente sem precisar trocar a água.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Minha%20piscina%20est%C3%A1%20verde%20e%20preciso%20de%20recupera%C3%A7%C3%A3o%20urgente!" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-emerald-600 group-hover:text-emerald-700 pt-4 border-t border-slate-200">
+                        <span>Socorro Urgente</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-cyan-300 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Manutenção Mensal / Quinzenal</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Planos recorrentes personalizados para residências, condomínios e sítios. Piscina pronta para uso 365 dias por ano.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20de%20Manuten%C3%A7%C3%A3o%20Mensal/Quinzenal." target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 group-hover:text-indigo-700 pt-4 border-t border-slate-200">
+                        <span>Ver Planos</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SEÇÃO ANTES & DEPOIS -->
+    <section id="antes-depois" class="py-16 md:py-24 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Transformação Real</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold tracking-tight">Confira os Resultados Impressionantes</p>
+                <p class="text-slate-400 text-base sm:text-lg">Veja como transformamos piscinas completamente escuras e sem uso em verdadeiros oásis cristalinos.</p>
+            </div>
+
+            <!-- Comparativo de Antes e Depois Grid -->
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                
+                <!-- Caso 1 -->
+                <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/60 shadow-xl space-y-4">
+                    <div class="grid grid-cols-2 gap-3 relative">
+                        <!-- Foto Antes -->
+                        <div class="relative rounded-xl overflow-hidden aspect-square border border-red-500/30">
+                            <img src="https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&w=600&q=80" alt="Piscina Antes do Tratamento" class="w-full h-full object-cover filter brightness-75 contrast-125 sepia-[.3] hue-rotate-90">
+                            <span class="absolute top-2 left-2 bg-red-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow">ANTES</span>
+                        </div>
+                        <!-- Foto Depois -->
+                        <div class="relative rounded-xl overflow-hidden aspect-square border border-emerald-500/30">
+                            <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=600&q=80" alt="Piscina Depois do Tratamento" class="w-full h-full object-cover">
+                            <span class="absolute top-2 left-2 bg-emerald-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow">DEPOIS</span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <h3 class="font-bold text-lg text-white">Recuperação de Água Verde Parada</h3>
+                        <p class="text-slate-400 text-sm">Tempo de tratamento: 24 horas. Eliminação total de algas e decantação completa da sujeira.</p>
+                    </div>
+                </div>
+
+                <!-- Caso 2 -->
+                <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/60 shadow-xl space-y-4">
+                    <div class="grid grid-cols-2 gap-3 relative">
+                        <!-- Foto Antes -->
+                        <div class="relative rounded-xl overflow-hidden aspect-square border border-red-500/30">
+                            <img src="https://images.unsplash.com/photo-1562778612-e1e0cda9915c?auto=format&fit=crop&w=600&q=80" alt="Piscina Turva Antes" class="w-full h-full object-cover filter brightness-90 saturate-50">
+                            <span class="absolute top-2 left-2 bg-red-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow">ANTES</span>
+                        </div>
+                        <!-- Foto Depois -->
+                        <div class="relative rounded-xl overflow-hidden aspect-square border border-emerald-500/30">
+                            <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?auto=format&fit=crop&w=600&q=80" alt="Piscina Cristalina Depois" class="w-full h-full object-cover">
+                            <span class="absolute top-2 left-2 bg-emerald-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow">DEPOIS</span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <h3 class="font-bold text-lg text-white">Tratamento Químico & Limpeza de Borda</h3>
+                        <p class="text-slate-400 text-sm">Ajuste de Alcalinidade e pH com aspiração e higienização profunda das bordas.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Robson!%20Quero%20deixar%20minha%20piscina%20como%20as%20do%20site!" target="_blank" class="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base px-8 py-3.5 rounded-xl shadow-lg shadow-emerald-500/20 transition-all hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Quero Minha Piscina Assim Também</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. POR QUE ESCOLHER ROBSON MACIEL -->
+    <section id="diferenciais" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest">Diferenciais</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Por Que Confiar no Nosso Trabalho?</p>
+                <p class="text-slate-600 text-base sm:text-lg">Trabalhamos com máxima responsabilidade para garantir que sua água fique saudável e segura para toda a família.</p>
+            </div>
+
+            <!-- Grid Responsiva de Diferenciais -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-4 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Pontualidade & Compromisso</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Dia e horário marcados cumpridos à risca. Sua rotina e lazer não sofrem interrupções indesejadas.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-4 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-vial-circle-check"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Produtos de Primeira Linha</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Utilizamos apenas produtos químicos certificados que garantem maior durabilidade da água sem agredir a pele e os olhos.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-4 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Segurança para Toda Família</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Ajustes corretos reduzem a proliferação de bactérias, mosquitos da dengue e alergias causadas por excesso de cloro.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-4 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Economia no Bolso</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        A manutenção preventiva correta evita a necessidade de trocas constantes de água e compras de produtos desnecessários.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-4 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Atendimento Direto</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Sem intermediários ou burocracia. Fale diretamente com Robson Maciel para dúvidas ou agendamentos rápidos.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-4 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Atendimento Personalizado</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Tratamento específico para cada tipo de estrutura (Alvenaria, Vinil ou Fibra), preservando a vida útil do revestimento.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CALCULADORA / FORMULÁRIO DE ORÇAMENTO RÁPIDO -->
+    <section id="orcamento" class="py-16 md:py-24 bg-gradient-to-b from-sky-50/50 to-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                <div class="bg-gradient-to-r from-cyan-600 to-blue-700 p-6 sm:p-10 text-white text-center">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mb-2">Simulador de Orçamento Rápido</h2>
+                    <p class="text-cyan-100 text-sm sm:text-base">Monte os detalhes da sua piscina e envie instantaneamente pelo WhatsApp!</p>
+                </div>
+
+                <form id="calc-form" class="p-6 sm:p-10 space-y-6">
+                    
+                    <!-- Tipo de Piscina -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-800 mb-3">1. Tipo de Piscina:</label>
+                        <div class="grid grid-cols-3 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="tipo" value="Alvenaria (Azulejo)" checked class="peer sr-only">
+                                <div class="p-3 text-center rounded-xl border border-slate-200 peer-checked:border-cyan-500 peer-checked:bg-cyan-50 peer-checked:text-cyan-700 text-xs sm:text-sm font-semibold transition-all">
+                                    <i class="fa-solid fa-border-all block text-lg mb-1"></i>
+                                    Alvenaria
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="tipo" value="Vinil" class="peer sr-only">
+                                <div class="p-3 text-center rounded-xl border border-slate-200 peer-checked:border-cyan-500 peer-checked:bg-cyan-50 peer-checked:text-cyan-700 text-xs sm:text-sm font-semibold transition-all">
+                                    <i class="fa-solid fa-rug block text-lg mb-1"></i>
+                                    Vinil
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="tipo" value="Fibra" class="peer sr-only">
+                                <div class="p-3 text-center rounded-xl border border-slate-200 peer-checked:border-cyan-500 peer-checked:bg-cyan-50 peer-checked:text-cyan-700 text-xs sm:text-sm font-semibold transition-all">
+                                    <i class="fa-solid fa-bath block text-lg mb-1"></i>
+                                    Fibra
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Estado da Água -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-800 mb-3">2. Como está a água atualmente?</label>
+                        <select id="estado-agua" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm text-slate-800 font-medium focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+                            <option value="Limpa (Apenas Manutenção Preventiva)">Limpa (Apenas Manutenção Preventiva)</option>
+                            <option value="Turva / Opaca">Turva / Opaca</option>
+                            <option value="Verde / Com Algas">Verde / Com Algas (Atenção Necessária)</option>
+                            <option value="Verde Escuro / Muito Parada">Verde Escuro / Muito Tempo Parada</option>
+                        </select>
+                    </div>
+
+                    <!-- Frequência Desejada -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-800 mb-3">3. Frequência de Limpeza Desejada:</label>
+                        <select id="frequencia" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm text-slate-800 font-medium focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+                            <option value="Avulsa / Limpeza Única">Avulsa / Limpeza Única</option>
+                            <option value="Quinzenal (2x por mês)">Quinzenal (2x por mês)</option>
+                            <option value="Semanal (4x por mês)">Semanal (4x por mês)</option>
+                        </select>
+                    </div>
+
+                    <!-- Tamanho Aproximado (Slider) -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-sm font-bold text-slate-800">4. Tamanho Estimado:</label>
+                            <span id="tamanho-val" class="text-sm font-extrabold text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full">Média (aprox. 30.000 Litros)</span>
+                        </div>
+                        <input type="range" id="tamanho-range" min="1" max="4" step="1" value="2" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-slate-400 font-medium mt-1">
+                            <span>Pequena (10k L)</span>
+                            <span>Média (30k L)</span>
+                            <span>Grande (50k L)</span>
+                            <span>Mito Grande (+80k L)</span>
+                        </div>
+                    </div>
+
+                    <!-- Bairro / Localização -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-800 mb-2">5. Seu Nome e Bairro/Cidade:</label>
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <input type="text" id="cliente-nome" placeholder="Seu Nome" class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm text-slate-800 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+                            <input type="text" id="cliente-bairro" placeholder="Seu Bairro / Cidade" class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm text-slate-800 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Botão Enviar WhatsApp -->
+                    <div class="pt-4">
+                        <button type="button" onclick="enviarOrcamentoWhatsApp()" class="w-full inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-lg py-4 rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Enviar Orçamento para o WhatsApp</span>
+                        </button>
+                        <p class="text-center text-xs text-slate-400 mt-2">Atendimento rápido e sem compromisso!</p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Robson!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." 
+       target="_blank" 
+       aria-label="Falar no WhatsApp"
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group">
+        <i class="fa-brands fa-whatsapp text-3xl sm:text-4xl"></i>
+        <!-- Tooltip Desktop -->
+        <span class="absolute right-20 bg-slate-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md hidden sm:block">
+            Solicitar Orçamento
+        </span>
+    </a>
+
+    <!-- 8. FOOTER COMPLETO -->
+    <footer class="bg-slate-950 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Coluna 1: Info Marca -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500 flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+                        <span class="text-lg font-bold text-white tracking-tight">ROBSON MACIEL</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Especialista em limpeza, tratamento químico e manutenção preventiva de piscinas residenciais e comerciais.
+                    </p>
+                </div>
+
+                <!-- Coluna 2: Contatos -->
+                <div class="space-y-3">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">Contato Direto</h4>
+                    <p class="text-sm flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                        <span>(00) 90000-0000</span>
+                    </p>
+                    <p class="text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-envelope text-cyan-400 text-base"></i>
+                        <span>contato@robsonmacielpiscinas.com.br</span>
+                    </p>
+                    <p class="text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-clock text-cyan-400 text-base"></i>
+                        <span>Seg - Sáb: 07:00 - 18:00</span>
+                    </p>
+                </div>
+
+                <!-- Coluna 3: Áreas Atendidas -->
+                <div class="space-y-3">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">Regiões Atendidas</h4>
+                    <p class="text-sm">
+                        <i class="fa-solid fa-location-dot text-rose-500 mr-1.5"></i> Residências, Condomínios Fechados, Sítios e Chácaras em toda a Região.
+                    </p>
+                    <p class="text-xs text-slate-500">
+                        Consulte disponibilidade para o seu bairro via WhatsApp.
+                    </p>
+                </div>
+
+                <!-- Coluna 4: Garantia -->
+                <div class="space-y-3">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">Qualidade Garantida</h4>
+                    <p class="text-xs leading-relaxed text-slate-400">
+                        Tratamento responsável com dosagem correta de produtos, prevenindo danos à estrutura da piscina e proteções de saúde para os banhistas.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Direitos Autorais -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="year"></span> Robson Maciel - Limpeza e Tratamento Profissional de Piscinas. Todos os direitos reservados.</p>
+                <p>Desenvolvido com foco em alta performance e conversão.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERATIVIDADE JS -->
+    <script>
+        // Menu Mobile Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Fechar menu mobile ao clicar num link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Slider do Tamanho da Piscina
+        const tamanhoRange = document.getElementById('tamanho-range');
+        const tamanhoVal = document.getElementById('tamanho-val');
+
+        const tamanhosLabels = [
+            "Pequena (aprox. 10.000 Litros)",
+            "Média (aprox. 30.000 Litros)",
+            "Grande (aprox. 50.000 Litros)",
+            "Muito Grande (+80.000 Litros)"
+        ];
+
+        tamanhoRange.addEventListener('input', (e) => {
+            const idx = parseInt(e.target.value) - 1;
+            tamanhoVal.textContent = tamanhosLabels[idx];
+        });
+
+        // Função de envio do orçamento formatado para o WhatsApp
+        function enviarOrcamentoWhatsApp() {
+            // Capturar Tipo
+            const tipo = document.querySelector('input[name="tipo"]:checked').value;
+            // Capturar Estado
+            const estado = document.getElementById('estado-agua').value;
+            // Capturar Frequência
+            const frequencia = document.getElementById('frequencia').value;
+            // Capturar Tamanho
+            const tamanho = tamanhoVal.textContent;
+            // Capturar Nome e Bairro
+            const nome = document.getElementById('cliente-nome').value.trim() || "Não informado";
+            const bairro = document.getElementById('cliente-bairro').value.trim() || "Não informado";
+
+            // Montagem da Mensagem
+            const mensagem = `*Olá, Robson! Gostaria de um orçamento para minha piscina:*%0A%0A` +
+                `👤 *Nome:* ${encodeURIComponent(nome)}%0A` +
+                `📍 *Bairro/Cidade:* ${encodeURIComponent(bairro)}%0A` +
+                `🏊‍♂️ *Tipo de Piscina:* ${encodeURIComponent(tipo)}%0A` +
+                `📏 *Tamanho Estimado:* ${encodeURIComponent(tamanho)}%0A` +
+                `🧪 *Estado Atual:* ${encodeURIComponent(estado)}%0A` +
+                `📅 *Frequência Desejada:* ${encodeURIComponent(frequencia)}%0A%0A` +
+                `Aguardando seu retorno!`;
+
+            // Número do WhatsApp (Substitua 5500000000000 pelo número real com DDD)
+            const numeroWhatsApp = "5500000000000";
+
+            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagem}`, '_blank');
+        }
+
+        // Ano Atual para o Footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
